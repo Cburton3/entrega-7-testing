@@ -25,12 +25,12 @@ export function giveUrlCard(card: number) {
     default:
       return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg";
   }
-};
+}
 
 export function givePointCard(card: number) {
   console.log(card);
   return card <= 7 ? card : 0.5;
-};
+}
 
 export const giveRandomNumber = () => {
   return Math.ceil(Math.random() * 10);
@@ -44,16 +44,11 @@ export const giveCardNumber = (randomNumber: number) => {
 };
 
 export const addPoints = (points: number) => {
-  //partida.currentScore = partida.currentScore + points; //this was changed by me
-  return partida.currentScore + points
+  return partida.currentScore + points;
 };
-//add point to just do the calc
-//set func to add the newly added points 
 
-
-
-export const obtenerEstadoPartida = (/*partida.currentScore : number*/): EstadoPartida => {
-  if (partida.currentScore === 7.5) { //RE i dont know if i need to put a number/string or leave it blank. easier to leave it blank
+export const obtenerEstadoPartida = (): EstadoPartida => {
+  if (partida.currentScore === 7.5) {
     partida.estado = "JUSTO_MAXIMA";
   }
   if (partida.currentScore > 7.5) {
@@ -61,6 +56,3 @@ export const obtenerEstadoPartida = (/*partida.currentScore : number*/): EstadoP
   }
   return partida.estado;
 };
-
-//need to redo above with score and final score
-
