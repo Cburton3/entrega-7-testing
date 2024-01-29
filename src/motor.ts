@@ -1,4 +1,4 @@
-import { partida } from "./modelo";
+import { partida, EstadoPartida } from "./modelo";
 
 export function giveUrlCard(card: number) {
   switch (card) {
@@ -49,4 +49,18 @@ export const addPoints = (points: number) => {
 };
 //add point to just do the calc
 //set func to add the newly added points 
+
+
+
+export const obtenerEstadoPartida = (/*partida.currentScore : number*/): EstadoPartida => {
+  if (partida.currentScore === 7.5) { //RE i dont know if i need to put a number/string or leave it blank. easier to leave it blank
+    partida.estado = "JUSTO_MAXIMA";
+  }
+  if (partida.currentScore > 7.5) {
+    partida.estado = "TE_HAS_PASADO";
+  }
+  return partida.estado;
+};
+
+//need to redo above with score and final score
 
